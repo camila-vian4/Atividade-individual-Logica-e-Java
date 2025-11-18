@@ -4,23 +4,24 @@ import java.util.*;
 
 public class Exercicio02 {
 	
-	public static void numPar() {
+	public static void numPar(ArrayList<Integer> numeros) {
+		ArrayList<Integer> pares = new ArrayList<Integer>();
 		
-		int pares = 0;
+		for (int num : numeros) {
 			
 			if (num % 2 == 0) {
-				pares++;
+				pares.add(num);
 				
-				System.out.print("\nNÚMEROS PARES: ", pares);
+			}
 			
 		}
+		
+		System.out.print("\nNÚMEROS PARES: " + pares);
 	}
 		
-
-
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
-		ArrayList<String> nomes = new ArrayList<Integer>();
+		ArrayList<Integer> numeros = new ArrayList<Integer>();
 		
 		System.out.println("EXERCÍCIO 2:\n");
 		System.out.println("Crie um programa que peça ao usuário uma quantidade de números inteiros para cadastrar em um");
@@ -31,15 +32,16 @@ public class Exercicio02 {
 		
 		for (int i = 1; i <= 10; i++) { 
 			System.out.print("Digite o " + i + "º número: ");
-			int numero = input.nextInt();
+			int num = input.nextInt();
+			
+			numeros.add(num);
 			
 		}
 		
-
-		nomes.add(numero);
-		numPar();
+		numPar(numeros);
 		
 		input.close();
 
 	}
+	
 }
